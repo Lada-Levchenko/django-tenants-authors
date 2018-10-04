@@ -25,7 +25,7 @@ SECRET_KEY = '@r+jv!y6bne0o(2pn&qq#t-a8p7$h*+@+gy4025y0is1-v%&5+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.trendy-sass.com']
+ALLOWED_HOSTS = ['.authors.com']
 
 
 # Application definition
@@ -35,6 +35,7 @@ SHARED_APPS = (
     'customers',
     'blog',
 
+    'django.contrib.contenttypes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sessions',
@@ -44,6 +45,7 @@ SHARED_APPS = (
 
 TENANT_APPS = (
     'django.contrib.contenttypes',
+    'blog',
 )
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]

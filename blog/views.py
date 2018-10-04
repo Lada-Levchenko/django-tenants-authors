@@ -27,9 +27,6 @@ class ArticlesView(ListView):
     template_name = 'articles.html'
     model = Article
 
-    def get_queryset(self):
-        return Article.objects.filter(author=self.request.tenant)
-
     def get_context_data(self, **kwargs):
         context = super(ArticlesView, self).get_context_data(**kwargs)
         context['tenants_list'] = Client.objects.all()
