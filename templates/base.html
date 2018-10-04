@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Authors:</p>
+<ul>
+    {% for tenant in tenants_list %}
+    <li><a href="http://{{tenant.domains.all.0.domain}}:8000">{{tenant.name}}</a></li>
+    {% endfor %}
+</ul>
+<p>Current author: <b>{{ current_tenant.name }}</b></p>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
