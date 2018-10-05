@@ -1,0 +1,2 @@
+Django==2.0.9
+django-tenants==2.0.0
